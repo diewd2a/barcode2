@@ -1,0 +1,29 @@
+<ion-view view-title="To Do List">
+    <ion-nav-buttons side="right">
+        <div class="buttons buttons-right header-item">
+    <span class="right-buttons">
+    <button class="button button-icon button-clear ion-android-more-vertical"> </button>
+    </span>
+        </div>
+    </ion-nav-buttons>
+    <ion-content ng-class="{expanded:isExpanded}">
+ 
+        <div class="list" style="padding-top: 0px !important;">
+                <div ng-repeat="todo in todoItem" class="item item-checkbox border-item">
+                    <label class="checkbox">
+                        <input ng-model="todo.status"
+                               ng-checked="todo.status"
+                               ng-change="settodo(todo.id,todo.status)"
+                               type="checkbox">
+                    </label>
+                    {{todo.topic}}
+                </div>
+        </div>
+ 
+        <div class="padding">
+            <button ng-click="usescan()" class="button button-small ">
+                Open Scanner</button>
+            <br /><br />
+        </div>
+    </ion-content>
+</ion-view>
